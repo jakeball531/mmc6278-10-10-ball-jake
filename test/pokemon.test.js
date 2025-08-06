@@ -58,9 +58,23 @@ describe('pokemon api util', () => {
       const pokemonData = await getPokemon('banana')
       expect(pokemonData.name).to.eq(POKEMON_RESPONSE.name)
     })
-    it('should return pokemon official artwork sprite')
-    it('should return pokemon height in feet and inches')
-    it('should return pokemon weight in pounds')
+
+    /** got the functions set up, will finish later */
+    it('should return pokemon official artwork sprite', async () => {
+      const pokemonData = await getPokemon('banana')
+
+    })
+
+    it('should return pokemon height in feet and inches', async () => {
+      const pokemonData = await getPokemon('banana')
+
+    })
+
+    it('should return pokemon weight in pounds', async () => {
+      const pokemonData = await getPokemon('banana')
+
+    })
+
     it('should throw error if axios errors', async () => {
       axiosStub.restore()
       sinon.stub(axios, 'get').throws(new Error('oh no'))
