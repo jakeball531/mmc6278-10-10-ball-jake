@@ -62,17 +62,19 @@ describe('pokemon api util', () => {
     /** got the functions set up, will finish later */
     it('should return pokemon official artwork sprite', async () => {
       const pokemonData = await getPokemon('banana')
-
+      expect(pokemonData.sprite).to.eq(POKEMON_RESPONSE.sprites.other['official-artwork'].front_default)
     })
 
     it('should return pokemon height in feet and inches', async () => {
       const pokemonData = await getPokemon('banana')
-
+      const actualHeight = getFeetAndInches(POKEMON_RESPONSE.height)
+      expect(pokemonData.height).to.eq(actualHeight)
     })
 
     it('should return pokemon weight in pounds', async () => {
       const pokemonData = await getPokemon('banana')
-
+      const actualWeight = getPounds(POKEMON_RESPONSE.weight)
+      expect(pokemonData.weight).to.eq(actualWeight)
     })
 
     it('should throw error if axios errors', async () => {
